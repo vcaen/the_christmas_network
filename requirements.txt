@@ -1,0 +1,11 @@
+Flask==0.10.1
+requests
+requests_cache
+python-dateutil
+Flask-SQLAlchemy
+Flask-Admin
+Pillow
+Flask-Mail
+Flask-Login
+Flask-Migrate
+Flask-Script
