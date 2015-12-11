@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+    <title>The Christmas Network</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/site.css') }}"/>
+</head>
+<body>
+<div class="container">
+    <div id="menu" class="menu cf"></div>
+    <h1></h1>
+
+    <div id="content"></div>
+</div>
+{% include 'scripts.html' %}
+<!--<script src="js/collections/posts.js"></script>
+<script src="js/collections/users.js"></script>-->
+<script>
+    window.onload = function () {
+        // bootstrap
+        document.getElementsByTagName('body')[0].html = "Hello World";
+    }
+</script>
+</body>
+</html>

@@ -4,8 +4,8 @@ requests_cache
 python-dateutil
 Flask-SQLAlchemy
 Flask-Admin
-Pillow
-Flask-Mail
 Flask-Login
 Flask-Migrate
 Flask-Script
+flask-restful
+Flask-Restless

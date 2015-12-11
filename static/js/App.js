@@ -1,4 +1,4 @@
-var app = (function() { 
+var app = (function() {
     var api = {
         views: {},
         models: {},
@@ -33,7 +33,7 @@ var app = (function() {
     		"new" : "newUser",
     		"edit/:index" : "editUser",
     		"delete/:index" : "deleteUser",
-    		"" : "home"
+    		"" : "home",
     		"profile/:index" : "showProfile"
     	},
     	showProfile: function(index) {
@@ -44,9 +44,9 @@ var app = (function() {
     	editUser: function(index) {},
     });
     api.router = new Router();
- 
+
     return api;
- 
+
 })();
 
 init: function() {
