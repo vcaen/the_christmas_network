@@ -9,28 +9,37 @@
     <div id="menu" class="menu cf"></div>
     <h1>Christmas</h1>
 
-    <div id="content"></div>
+<div id="sidebar"></div>
+
+<div id="content">
+<h2>Welcome to The Christmas social network</h2>
+<p>
+Even Santa is a member!
+</p>
 </div>
-{% include 'scripts.html' %}
-<!--<script src="js/collections/posts.js"></script>
-<script src="js/collections/users.js"></script>-->
-<script>
-    window.onload = function () {
-       function testCreate() {
-                // Lets perform a create operation [CREATE]
-            var post = new Post({ title: "backbone" });
-            post.save({}, {
-                type: "POST",
-                success: function (model, respose, options) {
-                    console.log("The model has been saved to the server");
-                },
-                error: function (model, xhr, options) {
-                    console.log("Something went wrong while saving the model");
-                }
-            });
-        }
-        testCreate();
-    }
+
+<!-- Templates -->
+<script type="text/template" id="tpl-post-list-item">
+    <a href='#post/<%= id %>'><%= title %></a>
 </script>
+
+<script type="text/template" id="tpl-post-details">
+    <div class="form-left-col">
+        <label>Id:</label>
+        <input type="text" id="postId" name="id" value="<%= id %>" disabled />
+        <label>User:</label>
+        <input type="text" id="user" name="user" value="<%= User %>" required/>
+        <label>Title:</label>
+        <input type="text" id="title" name="title" value="<%= Title %>"/>
+        <label>Country:</label>
+        <input type="text" id="Content" name="Content" value="<%= Content %>"/>
+        <label>Region:</label>
+        <input type="text" id="Date" name="Date"  value="<%= Date %>"/>
+    </div>
+</script>
+
+
+{% include 'scripts.html' %}
+</div>
 </body>
 </html>
