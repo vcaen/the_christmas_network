@@ -46,7 +46,7 @@ class User(db.Model):
                               secondaryjoin=id == friendship.c.friend_b_id,
                               )
 
-    def __init__(self, username, password, firstname, lastname):
+    def __init__(self, username="", password="", firstname="", lastname=""):
         self.username = username
         self.password = password
         self.firstname = firstname
