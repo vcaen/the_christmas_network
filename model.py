@@ -1,6 +1,6 @@
 # !/usr/bin/python
 # -*- coding: utf8 -*-
-import datetime
+from datetime import datetime
 
 
 
@@ -25,7 +25,7 @@ friendship = db.Table(
 class Picture(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     description = db.Column(db.String(255), nullable=True)
-    date = db.Column(db.DateTime, default=datetime.datetime.now())
+    date = db.Column(db.DateTime, default=datetime.now())
     file = db.Column(db.String(255), nullable=False)
 
     def __repr__(self):
@@ -81,7 +81,7 @@ class Post(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     user = db.relationship('User', backref=db.backref('posts', lazy='dynamic'))
 
-    def __init__(self, title, content, date=None):
+    def __init__(self, title="", content="", date=None):
         self.title = title
         self.content = content
         if date is None:
