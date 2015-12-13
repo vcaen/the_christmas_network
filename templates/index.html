@@ -7,7 +7,7 @@
 <body>
 <div class="container">
     <div id="menu" class="menu cf"></div>
-    <h1></h1>
+    <h1>Christmas</h1>
 
     <div id="content"></div>
 </div>
@@ -16,8 +16,20 @@
 <script src="js/collections/users.js"></script>-->
 <script>
     window.onload = function () {
-        // bootstrap
-        document.getElementsByTagName('body')[0].html = "Hello World";
+       function testCreate() {
+                // Lets perform a create operation [CREATE]
+            var post = new Post({ title: "backbone" });
+            post.save({}, {
+                type: "POST",
+                success: function (model, respose, options) {
+                    console.log("The model has been saved to the server");
+                },
+                error: function (model, xhr, options) {
+                    console.log("Something went wrong while saving the model");
+                }
+            });
+        }
+        testCreate();
     }
 </script>
 </body>

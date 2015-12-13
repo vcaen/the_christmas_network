@@ -1,12 +1,12 @@
-var User = Backbone.Model.extend({
+var Pictures = Backbone.Model.extend({
     defaults: {
         id: "",
-        name: ""
+        user: ""
     },
 
     idAttribute: "id",
     initialize: function () {
-        console.log('Users has been initialized');
+        console.log('Pctures has been initialized');
         this.on("invalid", function (model, error) {
             console.log("Houston, we have a problem: " + error)
         });
@@ -20,5 +20,5 @@ var User = Backbone.Model.extend({
             return "Invalid BookName supplied."
         }
     },
-    urlRoot: '/api/user'
+    urlRoot: '/api/pictures'
 });

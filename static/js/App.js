@@ -1,4 +1,4 @@
-var app = (function() {
+/*var app = (function() {
     var api = {
         views: {},
         models: {},
@@ -54,4 +54,4 @@ init: function() {
     this.model = new api.model.user();
     ViewsFactory.home();
     return this;
-}
+}*/
