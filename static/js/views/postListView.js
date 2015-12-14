@@ -11,8 +11,25 @@ var PostListView = Backbone.View.extend({
     },
  
     render:function (eventName) {
-        _.each(this.model.models[0].attributes.objects, function (post) {   
-            $(this.el).append(new PostListItemView({model:post}).render().el);
+        _.each(this.model.models[0].attributes.objects, function (post) { 
+            var picID = post.user.picture_id;
+            this.pic = new Picture({id:picID});
+            self = this;
+            this.pic.fetch({
+                success: function (response) {
+                    var file = response.get("file");
+                    /*var image = new Image({id:file});
+                    image.fetch({
+                        success: function(img) {
+                            self.img = img;
+                            post.image = img;
+                        }
+                    });*/
+                    post.userPic = file; 
+                    $(self.el).append(new PostListItemView({model:post}).render().el);                  
+                }
+            });      
+            
         }, this);
         return this;
     }

@@ -16,17 +16,17 @@
     <table>
         <tr>
         <td class = "postUserPhoto">
-            <p><%= user.firstname %></p> 
+            <img src= "/static/image/<%= userPic %>" alt="user_photo" height="70px" width="70px">
         </td>
         <td>
             <ul class = "postDetails">
-                <li><%= user.firstname %> at <%= date %></li>
+                <li><a href='#user/<%= user.id %>'><%= user.firstname %></a> <small> at <%= date %></small></li>
                 <li class="postTitle"><%= title %></li>
-                <li class="postContent"><%= content %></li>
+                <li class="postContent"><textarea readonly><%= content %></textarea></li>
             </ul>
         </td>
         </tr>
-    </table>
+    </a></table>
 </script>
 
 

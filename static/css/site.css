@@ -208,19 +208,25 @@ line-height: 1.4;
 #allPosts ul li table{
 	background-color: #fafafa;
 	width: 100%;
-	height: 100px;
 	border-style: solid;
     border-color: #DCDCDC;
     border-radius: 10px;
 }
 
-#allPosts ul li table{
-	background-color: #fafafa;
-	width: 100%;
-	border-style: solid;
-    border-color: #DCDCDC;
-    border-radius: 10px;
+#allPosts ul li table td.postUserPhoto {
+	width: 80px;
+	height: 80px;
 }
-#allPosts ul li table .postUserPhoto{
-	width: 15%;
+#allPosts ul li table #user{
+	font-size:	medium;
+}
+#allPosts ul li table .postTitle{
+	font-size:	medium;
+}
+
+#allPosts ul li table textarea{
+	width: 100%;
+    height: 50px;
+    overflow: auto;
+    border-style: hidden;	
 }
