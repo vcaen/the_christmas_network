@@ -10,7 +10,7 @@ var AppRouter = Backbone.Router.extend({
         this.posts.fetch({
             success:function () {
                 self.postListView = new PostListView({model:self.posts});
-                $('#sidebar').html(self.postListView.render().el);
+                $('#allPosts').html(self.postListView.render().el);
                 if (self.requestedId) self.postDetails(self.requestedId);
             }
         });

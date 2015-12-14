@@ -3,7 +3,8 @@ var Post = Backbone.Model.extend({
         id: "",
         user: "",
         title: "",
-        content: ""
+        content: "",
+        date: undefined
     },
 
     urlRoot: "api/post"

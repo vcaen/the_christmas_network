@@ -23,7 +23,7 @@ var PostListItemView = Backbone.View.extend({
  
     tagName:"li",
  
-    template:_.template($('#tpl-post-list-item').html()),
+    template:_.template($('#tpl-post-details').html()),
 
     initialize:function () {
         //this.model.bind("change", this.render, this);

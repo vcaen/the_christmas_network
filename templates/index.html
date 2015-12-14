@@ -9,44 +9,24 @@
     <div id="menu" class="menu cf"></div>
     <h1>Christmas</h1>
 
-<div id="sidebar"></div>
-
-<div id="content">
-<h2>Welcome to The Christmas social network</h2>
-<p>
-Even Santa is a member!
-</p>
-</div>
+<div id="allPosts"></div>
 
 <!-- Templates -->
-<script type="text/template" id="tpl-post-list-item">
-    <div class="form-left-col">
-        <label>Id:</label>
-        <input type="text" id="postId" name="id" value="<%= id %>" disabled />
-        <label>User:</label>
-        <input type="text" id="user" name="user" value="<%= user.name %>" required/>
-        <label>Title:</label>
-        <input type="text" id="title" name="title" value="<%= title %>"/>
-        <label>content:</label>
-        <input type="text" id="content" name="content" value="<%= content %>"/>
-        <label>Date:</label>
-        <input type="text" id="Date" name="Date"  value="<%= date %>"/>
-    </div>
-</script>
-
 <script type="text/template" id="tpl-post-details">
-    <div class="form-left-col">
-        <label>Id:</label>
-        <input type="text" id="postId" name="id" value="<%= id %>" disabled />
-        <label>User:</label>
-        <input type="text" id="user" name="user" value="<%= User %>" required/>
-        <label>Title:</label>
-        <input type="text" id="title" name="title" value="<%= Title %>"/>
-        <label>content:</label>
-        <input type="text" id="content" name="content" value="<%= Content %>"/>
-        <label>Date:</label>
-        <input type="text" id="Date" name="Date"  value="<%= Date %>"/>
-    </div>
+    <table>
+        <tr>
+        <td class = "postUserPhoto">
+            <p><%= user.firstname %></p> 
+        </td>
+        <td>
+            <ul class = "postDetails">
+                <li><%= user.firstname %> at <%= date %></li>
+                <li class="postTitle"><%= title %></li>
+                <li class="postContent"><%= content %></li>
+            </ul>
+        </td>
+        </tr>
+    </table>
 </script>
 
 
