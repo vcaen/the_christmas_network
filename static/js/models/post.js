@@ -4,6 +4,7 @@ var Post = Backbone.Model.extend({
         user: "",
         title: "",
         content: "",
+        userPic: "../appPhotos/santa-claus.jpg",
         date: undefined
     },
 

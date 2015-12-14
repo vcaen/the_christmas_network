@@ -81,8 +81,9 @@ class Post(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     user = db.relationship('User', backref=db.backref('posts', lazy='dynamic'))
 
-    def __init__(self, title="", content="", date=None):
+    def __init__(self, title="", content="", user_id="",date=None):
         self.title = title
         self.content = content
+        self.user_id = user_id
         if date is None:
             self.date = datetime.utcnow()

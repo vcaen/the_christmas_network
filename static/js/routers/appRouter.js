@@ -14,8 +14,7 @@ var AppRouter = Backbone.Router.extend({
                 self.postListView = new PostListView({model:self.posts});
                 $('#allPosts').html(self.postListView.render().el);
             }
-        });
-
+        });        
     },
     userDetails: function(id) {
         this.user = new User({id:id});

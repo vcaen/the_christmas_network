@@ -23,7 +23,7 @@
     <table>
         <tr>
         <td class = "postUserPhoto">
-            <img src= "/static/image/<%= userPic %>" alt="user_photo">
+            <img src= "/static/image/<%= userPic %>" alt="user_photo"/>
         </td>
         <td>
             <ul class = "postDetails">
@@ -37,15 +37,40 @@
 </script>
 
 <script type="text/template" id="tpl-newPost">
-    <table>        
+    <table style="background-color: #fafafa;
+    width: 100%;
+    border-style: solid;
+    border-color: #DCDCDC;
+    border-radius: 10px; margin-top:15px">
+        <tr>
+        <td class = "postUserPhoto"  style="height: 100px;  width: 100px; text-align: center;">
+            <img src= "/static/image/<%= userPic %>" alt="user_photo" style="height: 70px; width: 70px; border-radius: 35px; -webkit-border-radius: 35px;  -moz-border-radius: 35px;" />
+        </td>
         <td>
             <ul class = "postDetails">
                 <li><input type="text" id="title" name="title" value="<%= title %>" /></li>
-                <li><textarea id = "content"><%= content %></textarea></li>
+                <li><textarea value="What do you want for Christmas? ..." id = "content" style= "width: 100%;  height: 50px; overflow: auto; font-family: inherit;"  > <%= content %></textarea></li>
             </ul>
         </td>
         </tr>
-    </a></table>
+        <tr style="width:100%"><td></td><td><button style = "
+            -moz-box-shadow:inset 0px 39px 0px -24px #e67a73;
+            -webkit-box-shadow:inset 0px 39px 0px -24px #e67a73;
+            box-shadow:inset 0px 39px 0px -24px #e67a73;
+            background-color:#e4685d;
+            -moz-border-radius:4px;
+            -webkit-border-radius:4px;
+            border-radius:4px;
+            border:1px solid #ffffff;
+            display:inline-block;
+            cursor:pointer;
+            color:#ffffff;
+            font-family:Arial;
+            font-size:15px;
+            padding:6px 15px;
+            text-decoration:none;
+            text-shadow:0px 1px 0px #b23e35;" class="save">Save</button></td></tr>
+    </table>
 </script>
 
 <script type="text/template" id="tpl-user-details">
