@@ -7,11 +7,11 @@ var PostView = Backbone.View.extend({
     },
  
     render:function (eventName) {
-        $(this.el).html(this.template(this.model.toJSON()));
+        $(this.el).html(this.template(this.model));
         return this;
     },
 
-    events:{,
+    events:{
         "click .save":"savePost",
         "click .delete":"deletePost"
     },

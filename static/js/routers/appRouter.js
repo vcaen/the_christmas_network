@@ -6,16 +6,32 @@ var AppRouter = Backbone.Router.extend({
     },
  
     list:function () {
+        
+       // $('#sidebar').html(this.postListView.render().el);
+
+
         this.posts = new Posts();
-        this.postListView = new PostListView({model:this.posts});
-        this.posts.fetch();
-        $('#sidebar').html(this.postListView.render().el);
+        var self = this;
+        this.posts.fetch({
+            success:function () {
+                self.postListView = new PostListView({model:self.posts});
+                $('#sidebar').html(self.postListView.render().el);
+                if (self.requestedId) self.postDetails(self.requestedId);
+            }
+        });
+
     },
  
     postDetails:function (id) {
-        this.post = this.posts.get(id);
-        this.postView = new PostView({model:this.post});
-        $('#content').html(this.postView.render().el);
+        if (this.posts) {
+            this.post = this.posts.get(id);
+            if (this.postView) this.postView.close();
+            this.postView = new PostView({model:this.post});
+            $('#content').html(this.postView.render().el);
+        } else {
+            this.requestedId = id;
+            this.list();
+        }
     }
 });
 var app = new AppRouter();
