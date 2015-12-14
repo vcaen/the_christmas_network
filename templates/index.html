@@ -7,7 +7,15 @@
 <body>
 <img src="static/appPhotos/1.jpg" id="header" alt=""/>
 <div id="container">
-<div id="allPosts" style=></div>
+<table style="width:100%">
+    <tr>
+        <td class = "userInTable"><div id="userDetails" style="position: fixed;
+    top: 250px; left:0; width: inherit;" ></div></td>
+        <td class = "postsInTable"><div id="allPosts" ></div></td>
+    </tr>
+</table>
+
+
 </div>
 <!-- Templates -->
 <script type="text/template" id="tpl-post-details">
@@ -25,6 +33,11 @@
         </td>
         </tr>
     </a></table>
+</script>
+
+<script type="text/template" id="tpl-user-details">
+    <img src= "/static/image/<%= picture.file %>" alt="user_photo" height="100px" width="100px">
+    <div style = "font-size:large"> <%= firstname %> <%= lastname %> has <%= posts %> posts and <%= friends %> friends!</div>
 </script>
 
 

@@ -17,17 +17,14 @@ var AppRouter = Backbone.Router.extend({
 
     },
     userDetails: function(id) {
-        this.users = new Users();
-        var self = this;
-        this.users.fetch({
-            success:function () {
-                /*self.user = users.get(id);
-                self.userView = new userView({model:self.user});
-                $('#user').html(self.postListView.render().el);
-                if (self.requestedId) self.postDetails(self.requestedId);*/
-                console.log(users);
+        this.user = new User({id:id});
+        self = this;
+        this.user.fetch({
+            success: function (response) {                
+                self.userView = new UserView({model:response});
+                $('#userDetails').html(self.userView.render().el);
             }
-        });
+        }); 
     }
  
 });

@@ -17,14 +17,7 @@ var PostListView = Backbone.View.extend({
             self = this;
             this.pic.fetch({
                 success: function (response) {
-                    var file = response.get("file");
-                    /*var image = new Image({id:file});
-                    image.fetch({
-                        success: function(img) {
-                            self.img = img;
-                            post.image = img;
-                        }
-                    });*/
+                    var file = response.get("file");                    
                     post.userPic = file; 
                     $(self.el).append(new PostListItemView({model:post}).render().el);                  
                 }
