@@ -1,13 +1,10 @@
 var PostView = Backbone.View.extend({
  
-    template:_.template($('#tpl-post-details').html()),
+    template:_.template($('#tpl-newPost').html()),
 
-    initialize:function () {
-        this.model.bind("change", this.render, this);
-    },
  
     render:function (eventName) {
-        $(this.el).html(this.template(this.model));
+        $(this.el).html(this.template(this.model.attributes));
         return this;
     },
 
@@ -17,8 +14,8 @@ var PostView = Backbone.View.extend({
     },
 
     savePost:function () {
-        this.model.set({
-            user:$('#user').val(),            
+        console.log("save");
+        this.model.set({            
             title:$('#title').val(),
             content:$('#content').val()
         });
@@ -28,17 +25,7 @@ var PostView = Backbone.View.extend({
             this.model.save();
         }
         return false;
-    },
- 	
- 	deletePost:function () {
-        this.model.destroy({
-            success:function () {
-                alert('Post deleted successfully');
-                window.history.back();
-            }
-        });
-        return false;
-    },
+    }, 	
  
     close:function () {
         $(this.el).unbind();

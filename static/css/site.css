@@ -213,13 +213,24 @@ line-height: 1.4;
     border-radius: 10px;
 }
 
-#allPosts ul li table td.postUserPhoto {
-	width: 80px;
-	height: 80px;
+#allPosts ul li table td.postUserPhoto img {
+	height: 70px;
+	width: 70px;
+	border-radius: 35px;
+	-webkit-border-radius: 35px;
+	-moz-border-radius: 35px;
 }
+
+#allPosts ul li table td.postUserPhoto  {
+	height: 100px;
+	width: 100px;
+	text-align: center;
+}
+
 #allPosts ul li table #user{
 	font-size:	medium;
 }
+
 #allPosts ul li table .postTitle{
 	font-size:	medium;
 }
@@ -241,19 +252,25 @@ line-height: 1.4;
 }
 #container {
 	margin-top: 200px;
-	margin-left: 70px;
-	margin-right: 70px;
+	margin-left: 30px;
+	margin-right: 30px;
 }
 
 td.postsInTable {
-	width: 70%;
+	width: 80%;
 }
 
 td.userInTable {
-	width: 30%;
+	width: 20%;
 }
 
-td.userInTable ul {
-	list-style-type: none;
-	padding-left:0;
+td.userInTable img {
+	height: 120px;
+	width: 120px;
+	border-radius: 60px;
+	-webkit-border-radius: 60px;
+	-moz-border-radius: 60px;
+	box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 }

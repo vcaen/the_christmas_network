@@ -2,7 +2,8 @@ var AppRouter = Backbone.Router.extend({
  
     routes:{
         "":"list",
-        "user/:id":"userDetails"
+        "user/:id":"userDetails",
+        "post/new": "newPost"
     },
  
     list:function () {
@@ -25,6 +26,10 @@ var AppRouter = Backbone.Router.extend({
                 $('#userDetails').html(self.userView.render().el);
             }
         }); 
+    },
+    newPost: function() {
+        app.postView = new PostView({model:new Post()});
+        $('#allPosts').prepend(app.postView.render().el);
     }
  
 });

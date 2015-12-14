@@ -9,8 +9,9 @@
 <div id="container">
 <table style="width:100%">
     <tr>
-        <td class = "userInTable"><div id="userDetails" style="position: fixed;
-    top: 250px; left:0; width: inherit;" ></div></td>
+        <td class = "userInTable" style = "
+    text-align: center;"><div id="userDetails" style="position: fixed;
+    top: 250px; width: 150px;" ></div></td>
         <td class = "postsInTable"><div id="allPosts" ></div></td>
     </tr>
 </table>
@@ -22,7 +23,7 @@
     <table>
         <tr>
         <td class = "postUserPhoto">
-            <img src= "/static/image/<%= userPic %>" alt="user_photo" height="70px" width="70px">
+            <img src= "/static/image/<%= userPic %>" alt="user_photo">
         </td>
         <td>
             <ul class = "postDetails">
@@ -35,8 +36,20 @@
     </a></table>
 </script>
 
+<script type="text/template" id="tpl-newPost">
+    <table>        
+        <td>
+            <ul class = "postDetails">
+                <li><input type="text" id="title" name="title" value="<%= title %>" /></li>
+                <li><textarea id = "content"><%= content %></textarea></li>
+            </ul>
+        </td>
+        </tr>
+    </a></table>
+</script>
+
 <script type="text/template" id="tpl-user-details">
-    <img src= "/static/image/<%= picture.file %>" alt="user_photo" height="100px" width="100px">
+    <img src= "/static/image/<%= picture.file %>" alt="user_photo" />
     <div style = "font-size:large"> <%= firstname %> <%= lastname %> has <%= posts %> posts and <%= friends %> friends!</div>
 </script>
 
