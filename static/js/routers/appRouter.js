@@ -1,15 +1,10 @@
 var AppRouter = Backbone.Router.extend({
  
     routes:{
-        "":"list",
-        "post/:id":"postDetails"
+        "":"list"
     },
  
     list:function () {
-        
-       // $('#sidebar').html(this.postListView.render().el);
-
-
         this.posts = new Posts();
         var self = this;
         this.posts.fetch({
@@ -20,19 +15,8 @@ var AppRouter = Backbone.Router.extend({
             }
         });
 
-    },
- 
-    postDetails:function (id) {
-        if (this.posts) {
-            this.post = this.posts.get(id);
-            if (this.postView) this.postView.close();
-            this.postView = new PostView({model:this.post});
-            $('#content').html(this.postView.render().el);
-        } else {
-            this.requestedId = id;
-            this.list();
-        }
     }
+ 
 });
 var app = new AppRouter();
 Backbone.history.start();

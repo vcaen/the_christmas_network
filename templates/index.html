@@ -20,7 +20,18 @@ Even Santa is a member!
 
 <!-- Templates -->
 <script type="text/template" id="tpl-post-list-item">
-    <a href='#post/<%= id %>'><%= title %></a>
+    <div class="form-left-col">
+        <label>Id:</label>
+        <input type="text" id="postId" name="id" value="<%= id %>" disabled />
+        <label>User:</label>
+        <input type="text" id="user" name="user" value="<%= user.name %>" required/>
+        <label>Title:</label>
+        <input type="text" id="title" name="title" value="<%= title %>"/>
+        <label>content:</label>
+        <input type="text" id="content" name="content" value="<%= content %>"/>
+        <label>Date:</label>
+        <input type="text" id="Date" name="Date"  value="<%= date %>"/>
+    </div>
 </script>
 
 <script type="text/template" id="tpl-post-details">
