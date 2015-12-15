@@ -21,11 +21,13 @@ var PostView = Backbone.View.extend({
         $.ajax({
             url: '/api/post',
             type: 'POST',           
-            data: JSON.stringify({"title":model.title, "content":model.content, "user_id":"2"}),
+            data: JSON.stringify({"title":model.title, "content":model.content, "user_id":"8"}),
             dataType: 'json',
             contentType: "application/json",
             success: function(data) {
-                console.log(data);
+                app.posts.add(new Post(data));
+                $('#title').val('');
+                $('#content').val('')
             }
         });
         //app.posts.create(this.model.attributes);

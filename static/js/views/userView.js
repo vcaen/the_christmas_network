@@ -7,7 +7,6 @@ var UserView = Backbone.View.extend({
         var user = attrs;
         user.friends = attrs.friends.length;
         user.posts = attrs.posts.length;
-        console.log(user);
         $(this.el).html(this.template(user));
         return this;
     },

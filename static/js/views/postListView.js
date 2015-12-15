@@ -1,17 +1,9 @@
 var PostListView = Backbone.View.extend({
  
     tagName:'ul',
- 
-    initialize:function () {
-        this.model.bind("reset", this.render, this);
-        var self = this;
-        /*this.model.bind("add", function (post) {
-            $(self.el).append(new PostListItemView({model:post}).render().el);
-        });*/
-    },
- 
-    render:function (eventName) {
-        _.each(this.model.models[0].attributes.objects, function (post) { 
+    
+
+    renderOne: function (post) { 
             var picID = post.user.picture_id;
             this.pic = new Picture({id:picID});
             self = this;
@@ -19,10 +11,24 @@ var PostListView = Backbone.View.extend({
                 success: function (response) {
                     var file = response.get("file");                    
                     post.userPic = file; 
-                    $(self.el).append(new PostListItemView({model:post}).render().el);                  
+                    $(self.el).prepend(new PostListItemView({model:post}).render().el);                  
                 }
             });      
             
+    },
+
+    initialize:function () {
+        this.model.bind("reset", this.render, this);
+        var self = this;
+        this.model.bind("add", function (post) {
+            self.renderOne(post.attributes);
+        });
+    },
+ 
+    render:function (eventName) {
+        var self = this;
+        _.each(this.model.models[0].attributes.objects, function (post) {
+            self.renderOne(post);
         }, this);
         return this;
     }
