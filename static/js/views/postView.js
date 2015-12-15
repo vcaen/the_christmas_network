@@ -16,12 +16,13 @@ var PostView = Backbone.View.extend({
     savePost:function () {
         var model  = {            
             title:$('#title').val(),
-            content:$('#content').val()
+            content:$('#content').val(),
+            user_id:app.idUser
         };
         $.ajax({
             url: '/api/post',
             type: 'POST',           
-            data: JSON.stringify({"title":model.title, "content":model.content, "user_id":"8"}),
+            data: JSON.stringify({"title":model.title, "content":model.content, "user_id":model.user_id}),
             dataType: 'json',
             contentType: "application/json",
             success: function(data) {

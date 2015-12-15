@@ -269,9 +269,40 @@ td.userInTable img {
 	height: 120px;
 	width: 120px;
 	border-radius: 60px;
-	-webkit-border-radius: 60px;
-	-moz-border-radius: 60px;
 	box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 }
+button.loginButton {
+	width: 70px;
+	height: 30px;
+	margin: 15px 15px 15px 15px;	
+    box-shadow:inset 0px 39px 0px -24px #e67a73;
+    background-color:#e4685d;
+    border-radius:4px;
+    border:1px solid #ffffff;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:12px;
+    padding:6px 15px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #b23e35;
+}
+button.signUpButton {
+	width: 70px;
+	height: 30px;
+	margin: 15px 15px 15px 15px;	
+    box-shadow:inset 0px 39px 0px -24px #F9F284;
+    background-color: #F9F2D4;
+    border-radius:4px;
+    border:1px solid #ffffff;
+    display:inline-block;
+    cursor:pointer;
+    color:#483434;
+    font-family:Arial;
+    font-size:12px;
+    padding:6px 6px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #b23e35;
+}
+
