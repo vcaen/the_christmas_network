@@ -46,11 +46,12 @@ class User(db.Model):
                               secondaryjoin=id == friendship.c.friend_b_id,
                               )
 
-    def __init__(self, username="", password="", firstname="", lastname=""):
+    def __init__(self, username="", password="", firstname="", picture_id="", lastname=""):
         self.username = username
         self.password = password
         self.firstname = firstname
         self.lastname = lastname
+        self.picture_id = picture_id
 
     # Flask-Login integration
     def is_authenticated(self):

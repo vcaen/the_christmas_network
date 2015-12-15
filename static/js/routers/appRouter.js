@@ -36,6 +36,32 @@ var AppRouter = Backbone.Router.extend({
         app.postView = new PostView({model:new Post()});
         $('#allPosts').prepend(app.postView.render().el);
     },
+    newUser: function() {
+        var user  = {            
+            firstname:$('#firstname').val(),
+            lastname:$('#lastname').val(),
+            username:$('#username').val(),
+            password:$('#pwd').val()
+        };
+        $.ajax({
+            url: '/api/user',
+            type: 'POST',           
+            data: JSON.stringify({"firstname":user.firstname, 
+                "lastname":user.lastname,
+                "username":user.username,
+                "password":user.password,
+                "picture_id":"2"
+                }),
+            dataType: 'json',
+            contentType: "application/json",
+            success: function(data) {
+                $("#signUpForm").hide();
+                $(".signUpButton").hide();
+                app.list();
+            }
+        });
+        
+    }
     
  
 });
@@ -60,6 +86,10 @@ $(".loginButton").on("click", function() {
     });
 });
 
-$(".loginButton").on("click", function() {
-    app.signup();
+$(".signUpButton").on("click", function() {
+    if($("#signUpForm").is(":visible")) {
+        app.newUser();
+    } else {
+        $("#signUpForm").show();
+    }
 });
