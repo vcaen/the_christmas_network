@@ -1,0 +1,1 @@
+python $OPENSHIFT_REPO_DIR"db_init.py"
