@@ -20,10 +20,9 @@ from app import app as application
 # Below for testing only
 #
 if __name__ == '__main__':
-    # from wsgiref.simple_server import make_server
-    # httpd = make_server('localhost', 8051, application)
-    # print "App is running on http://%s:%d" % httpd.server_address
-    #
-    # # Wait for a single request, serve it and quit.
-    # httpd.serve_forever()
-    application.run()
+    from wsgiref.simple_server import make_server
+    httpd = make_server('localhost', 8051, application)
+    print "App is running on http://%s:%d" % httpd.server_address
+
+    # Wait for a single request, serve it and quit.
+    httpd.serve_forever()
