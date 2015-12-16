@@ -50,7 +50,7 @@ var AppRouter = Backbone.Router.extend({
                 "lastname":user.lastname,
                 "username":user.username,
                 "password":user.password,
-                "picture_id":"2"
+                "picture_id":2
                 }),
             dataType: 'json',
             contentType: "application/json",
